@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box !important;
+}
+
+/* ---- grid ---- */
+
+.grid {
+    background: white;
+    width: 100%;
+    background-color: white;
+}
+
+/* clearfix */
+
+.grid:after {
+    background-color: #ffffff00;
+    content: '';
+    display: block !important;
+    clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+    width: 125px;
+    height: 125px;
+    float: left;
+    margin-bottom: 5px;
+    background: blue;
+/*     border: 2px solid white; */
+    border-radius: 0px;
+}
+
+
+
+.grid-item--Rettangolo {
+    height: 125px;
+    width: 250px;
+}
+
+
+.grid-item--BigQuadrato {
+    width: 250px;
+    height: 250px;
+}
+
+/* aggiustamento della posizione del numeretto riguardante i correlati che ci sono */
+.grid-item > span{
+    position: absolute;
+    margin-top: 77%;
+    margin-left: 70% !important;
+}
+
+.grid-item--Rettangolo>span{
+    position: absolute;
+    margin-top: 37%;
+    margin-left: 84% !important;
+}
+.grid-item--BigQuadrato>span{
+    position: absolute;
+    margin-top: 87%;
+    margin-left: 84% !important;
+}
+
+
+
+ .grid-item--gigante {
+    width: 240px;
+    height: 240px;
+    z-index: 2; 
+  } 
+
+  .back-grid-item{
+    background-color: #0059b3;
+  }
+  .back-Rettangolo{
+    background-color: #004c99;
+  }
+  .back-BigQuadrato{
+    background-color: #004080;
+  }
+
+
+  .aggiustamentoNotificaTag{
+        float: left;
+  }
+
+
+  /* ---- grid-item ---- */
+
+
+  .TitleOfService{
+        position: absolute;
+        color: white;
+        margin-left: 10px;
+        margin-top: 20px;
+        margin-right: 10px;
+        font-size: large;
+  }
+
+  .DescriptionOfTiles{
+        position: absolute;
+        color: white;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: medium;
+  }
+
+/* si possono usare ancora, nel codice sono ancora abilitate queste classi */
+/* .TitleOfService_quadratino{
+    margin-left: 10%;
+    margin-top: 10%;
+    font-size: small;
+}
+
+.TitleOfService_rettangolo{
+   margin-top: 1%;
+   margin-left: 3%;
+   font-size: medium;
+}
+.DescriptionOfTiles_rettangolo{
+    margin-left: 5%;
+    margin-top: 10%;
+    font-size: small;
+}
+.TitleOfService_quadrato{
+    margin-top: 1%;
+    margin-left: 3%;
+    font-size: medium;
+}
+.DescriptionOfTiles_quadrato{
+    margin-left: 5%;
+    margin-top: 10%;
+    font-size: small;
+} */
+
+
+
+
+
+

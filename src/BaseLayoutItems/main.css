@@ -1,0 +1,76 @@
+.inputSearch{
+    width: 85%;
+    height: 45px;
+}
+
+.buttonSearch{
+    width: 15%;
+    background-color: #0066cc;
+    color: white
+}
+
+.containerSuggestion{
+    visibility: hidden;
+    position: absolute;
+    background-color: white;
+    color: black;
+    margin-top: 46px;
+    width: 85%;
+    text-align: left
+}
+
+.itemSuggestList{
+    background-color: white;
+    padding:11px;
+}
+.itemSuggestList:hover{
+    background-color: lightgrey;
+}
+
+.ULstyle{
+    height: 200px;
+    overflow:hidden; 
+    overflow-y:scroll;
+}
+
+/* schedaServizi */
+
+
+.Menu_SchedaServizi {
+    list-style-type: none;
+    display: inline-flex ;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0);
+}
+
+.item_Menu_SchedaServizi {
+    float: left;
+    /* border: 1px solid red; */
+    margin-right: 5%;
+}
+
+.item_Menu_SchedaServizi > a {
+    display: block;
+    text-align: center;
+    padding: 15px 17px;
+    text-decoration: none;
+    color: #0066cc !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    
+}
+
+.item_Menu_SchedaServizi > a:hover {
+    /* background-color: #111; */
+}
+
+.iconGrandezza{
+    font-size: 250%;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+
