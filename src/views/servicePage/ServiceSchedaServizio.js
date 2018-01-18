@@ -53,7 +53,25 @@ export default class SchedaServizio extends Component {
       themes:null,
       interactivityLevel:null,
       interactivityLevelDescription:null,
-      
+/* new valori */
+      templateName:null,
+      serviceType:null,
+      keywords:[],
+      sector:null,
+      contacts:[],
+      temporalCoverage:null,
+      inputName:[],
+      outputName:[],
+      channelPhone:null,
+      channelEmail:[],
+      channelOffline:null,
+      costs:null,
+      processingTimes:null,
+      spatialCoverage:[],
+      organizations:null,
+      lifeEvents:null,
+      businessEvents:null,
+
     };
   }
 
@@ -163,6 +181,62 @@ showHamburgerMenu(){
     this.setState({interactivityLevelDescription:input});
   }
 
+  /* setto funzioni nuove variabili */
+  setTemplateName(input){
+    this.setState({templateName:input});
+  }
+  setServiceType(input){
+    this.setState({serviceType:input});
+  }
+  setKeywords(input){
+    this.setState({keywords:input});
+  }
+  setSector(input){
+    this.setState({sector:input});
+  }
+  setContacts(input){
+    this.setState({contacts:input});
+  }
+  setTemporalCoverage(input){
+    this.setState({temporalCoverage:input});
+  }
+  setInputName(input){
+    this.setState({inputName:input});
+  }
+  setOutputName(input){
+    this.setState({outputName:input});
+  }
+  setChannelPhone(input){
+    this.setState({channelPhone:input});
+  }
+  setChannelEmail(input){
+    this.setState({channelEmail:input});
+  }
+  setChannelOffline(input){
+    this.setState({channelOffline:input});
+  }
+  setCosts(input){
+    this.setState({costs:input});
+  }
+  setProcessingTimes(input){
+    this.setState({processingTimes:input});
+  }
+  setSpatialCoverage(input){
+    this.setState({spatialCoverage:input});
+  }
+  setOrganizations(input){
+    this.setState({organizations:input});
+  }
+  setLifeEvents(input){
+    this.setState({lifeEvents:input});
+  }
+  setBusinessEvents(input){
+    this.setState({businessEvents:input});
+  }
+
+
+
+
   setGeneralResponse(ajaxResponse){
 /*     console.log('dati arrivati in setGeneralResponse: ');
     console.log(ajaxResponse); 
@@ -181,6 +255,25 @@ showHamburgerMenu(){
     this.setThemes(ajaxResponse.themes);
     this.setInteractivityLevel(ajaxResponse.interactivityLevel);
     this.setInteractivityLevelDescription(ajaxResponse.interactivityLevelDescription);
+
+  /* setto funzioni nuove variabili */
+   this.setTemplateName(ajaxResponse.templateName);
+   this.setServiceType(ajaxResponse.serviceType);
+   this.setKeywords(ajaxResponse.keywords);
+   this.setSector(ajaxResponse.sector);
+   this.setContacts(ajaxResponse.contacts);
+   this.setTemporalCoverage(ajaxResponse.temporalCoverage);
+   this.setInputName(ajaxResponse.inputName);
+   this.setOutputName(ajaxResponse.outputName);
+   this.setChannelPhone(ajaxResponse.channelPhone);
+   this.setChannelEmail(ajaxResponse.channelEmail);
+   this.setChannelOffline(ajaxResponse.channelOffline);
+   this.setCosts(ajaxResponse.costs);
+   this.setProcessingTimes(ajaxResponse.processingTimes);
+   this.setSpatialCoverage(ajaxResponse.spatialCoverage);
+   this.setOrganizations(ajaxResponse.organizations);
+   this.setLifeEvents(ajaxResponse.lifeEvents);
+   this.setBusinessEvents(ajaxResponse.businessEvents);
 
   }
 
@@ -413,7 +506,7 @@ showCubeLoaderSpin()
 
                     <ul className="Menu_SchedaServizi" id="Menu_SchedaServizi">
                       {/* <li className="item_Menu_SchedaServizi"><a href="#Section-Informazioni"><i class="iconGrandezza icon-info icons"></i> Information</a></li> */}
-                      <li className="item_Menu_SchedaServizi"><a href="#Section-Accesso" id="anchor_SectionAccesso"><i className="iconGrandezza icon-lock icons"></i> Fruizione</a></li>
+                      <li className="item_Menu_SchedaServizi"><a href="#Section-Accesso" id="anchor_SectionAccesso"><i className="iconGrandezza icon-grid icons"></i> Fruizione</a></li>
                       <li className="item_Menu_SchedaServizi"><a href="#Section-Contatti" id="anchor_SectionContatti"><i className="iconGrandezza icon-envelope icons"></i> Contatti</a></li>
                       <li className="item_Menu_SchedaServizi"><a href="#Section-Classificazioni" id="anchor_SectionClassificazioni"><i className="iconGrandezza icon-tag icons"></i> Classificazioni</a></li>
                       <li className="item_Menu_SchedaServizi"><a href="#Section-Organizzazioni" id="anchor_SectionOrganizzazioni"><i className="iconGrandezza icon-organization icons"></i> Organizzazioni</a></li>
@@ -480,7 +573,7 @@ showCubeLoaderSpin()
 
                   <div id="ContainerServizi">
 
-                    <SchedaInformazioni id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
+                    <SchedaInformazioni id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} inputName={this.state.inputName} outputName={this.state.outputName} temporalCoverage={this.state.temporalCoverage} spatialCoverage={this.state.spatialCoverage} lifeEvents={this.state.lifeEvents} businessEvents={this.state.businessEvents}/>
                     
                     <SchedaAccesso id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
 

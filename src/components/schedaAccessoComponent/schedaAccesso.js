@@ -3,7 +3,35 @@ import React, {Component} from 'react';
 {/*Da cambiare nome schedaAccesso in SchedaFruizione e i vari import*/}
 export default class SchedaAccesso extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            id:props.id,
+            interactivityLevel:props.interactivityLevel,
+            interactivityLevelDescription:props.interactivityLevelDescription,
+            channelPhone:props.channelPhone,
+            channelEmail:props.channelEmail,
+            channelOffline:props.channelOffline,
+            costs:props.costs,
+            processingTimes:props.processingTimes,
 
+        }
+
+    }
+    componentWillReceiveProps(nextProps) {
+        
+        this.setId(nextProps.id);
+        /* this.setInteractivityLevel(nextProps.id); */
+    }
+
+    setId(input){
+        this.setState({id:input});
+      }
+ /*    setInteractivityLevel(input){
+        this.setInteractivityLevel({interactivityLevel:input});
+      }
+ */
+    
     
 
 
@@ -29,7 +57,7 @@ export default class SchedaAccesso extends Component {
                                         <p>
                                             
                                             <strong>Livello di interazione:</strong>
-                                            
+                                            {this.state.interactivetyLevel}
                                             <p>{/*interactivetyLevel*/}Interazione a due vie</p>
                                             <p>{/*interactivityLevelDescription*/}L'utente può avviare l'atto/procedimento amministrativo di interesse (es. il modulo può essere compilato e inviato on line) e viene garantita on line solo la presa in carico dei dati immessi dall'utente e non la loro contestuale elaborazione.</p>
                                         </p>

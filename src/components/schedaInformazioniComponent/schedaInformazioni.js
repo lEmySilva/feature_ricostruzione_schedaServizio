@@ -17,9 +17,13 @@ export default class SchedaInformazioni extends Component {
             status:props.status,
             pagoPA:props.pagoPA,
             spid:props.spid,
-            themes:props.themes,
-            interactivityLevel:props.interactivityLevel,
-            interactivityLevelDescription:props.interactivityLevelDescription,
+            inputName:props.inputName,
+            outputName:props.outputName,
+            temporalCoverage:props.temporalCoverage,
+            spatialCoverage:props.spatialCoverage,
+            lifeEvents:props.lifeEvents,
+            businessEvents:props.businessEvents,
+            realEvent:null,
         };
       }
 
@@ -42,9 +46,14 @@ export default class SchedaInformazioni extends Component {
         this.setStatus(nextProps.status);
         this.setPagoPA(nextProps.pagoPA);
         this.setSpid(nextProps.spid);
-        this.setThemes(nextProps.themes);
-        this.setInteractivityLevel(nextProps.interactivityLevel);
-        this.setInteractivityLevelDescription(nextProps.interactivityLevelDescription);
+        this.setInputName(nextProps.inputName);
+        this.setOutputName(nextProps.outputName);
+        this.setTemporalCoverage(nextProps.temporalCoverage);
+        this.setSpatialCoverage(nextProps.spatialCoverage);
+       /*  this.lifeEvents(nextProps.lifeEvents);
+        this.businessEvents(nextProps.businessEvents); */
+        if (nextProps.lifeEvents==true && nextProps.businessEvent==false) this.setRealEvent ("Servizio per cittadino")
+        else this.setRealEvent ("Servizio per professionista-impresa")
     }
 
 
@@ -72,16 +81,27 @@ export default class SchedaInformazioni extends Component {
     setSpid(input){
         this.setState({spid:input});
       }
-    setThemes(input){
-        this.setState({themes:input});
+    setInputName(input){
+        this.setState({inputName:input});
       }
-    setInteractivityLevel(input){
-        this.setState({interactivityLevel:input});
+    setOutputName(input){
+      this.setState({outputName:input});
       }
-    setInteractivityLevelDescription(input){
-        this.setState({interactivityLevelDescription:input});
+    setTemporalCoverage(input){
+        this.setState({temporalCoverage:input});
       }
-
+    setSpatialCoverage(input){
+        this.setState({spatialCoverage:input});
+      }
+    setLifeEvents(input){
+        this.setState({lifeEvents:input});
+      }
+    setBusinessEvents(input){
+        this.setState({businessEvents:input});
+      }
+    setRealEvent(input){
+        this.setState({realEvent:input});
+      }
 
     render() {
         return (
@@ -119,7 +139,7 @@ export default class SchedaInformazioni extends Component {
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
                                             <strong> Stato:</strong>
-                                            {/*status*/}
+                                            {this.state.status}
                                             
                                         </p>
                                     </li>
@@ -135,14 +155,14 @@ export default class SchedaInformazioni extends Component {
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
                                             <strong> Documentazione necessaria:</strong>
-                                            {/*inputNamee*/}
+                                            {this.state.inputName}
                                             
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
                                             <strong> Documentazione rilasciata:</strong>
-                                            {/*outputName*/}
+                                            {this.state.outputName}
                                             
                                         </p>
                                     </li>
@@ -151,21 +171,22 @@ export default class SchedaInformazioni extends Component {
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
                                             <strong> Disponibilità del servizio:</strong>
-                                            {/*temporalCoverage*/}
+                                            {this.state.temporalCoverage}
                                             
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                     <p>
                                         <strong> Territorio di competenza:</strong>
-                                        {/*spatialCoverage*/}
+                                        {this.state.spatialCoverage}
                                         
                                     </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                     <p>
                                         <strong> Tipologia:</strong>
-                                        {/*lifeEvents or businessEvents*/}
+                                        {this.state.realEvent}
+
                                         
                                     </p>
                                     </li>
