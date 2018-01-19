@@ -74,3 +74,13 @@
 }
 
 
+
+/* Scheda Accesso */
+.dim_Tabella{
+    width: 50% !important;
+    float: left;
+}
+
+.m-top-broken{
+    margin-top: 137px !important;
+}

@@ -170,7 +170,7 @@ export default class SchedaInformazioni extends Component {
 
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong> Disponibilità del servizio:</strong>
+                                            <strong> Disponibilità del servizio:</strong> 
                                             {this.state.temporalCoverage}
                                             
                                         </p>
@@ -193,7 +193,7 @@ export default class SchedaInformazioni extends Component {
                                 </class>
                             </div>
                             <div
-                                className="Form-field Grid-cell u-md-size1of2 u-lg-size1of2 u-textRight u-padding-top-xxl u-padding-bottom-s"
+                                className="Form-field Grid-cell u-textRight u-padding-top-xxl u-padding-bottom-s"
                                 id={this.state.id}>
                                 <a href="/ricerca" onClick="ServiceSelected(event)" className="Button Button--default u-textNoWrap u-background-60 u-color-white u-textWeight-600 u-padding-left-s  u-padding-right-xs  u-padding-top-xs u-padding-bottom-xs u-margin-bottom-xs u-textUppercase u-borderRadius-s u-linkClean u-margin-left-m">Torna alla ricerca<span className="u-text-r-xs u-margin-left-xxs Icon Icon-file"></span></a>
                                 <a className="Button Button--default u-textNoWrap u-background-60 u-color-white u-textWeight-600 u-padding-left-s  u-padding-right-xs  u-padding-top-xs u-padding-bottom-xs u-margin-bottom-xs u-textUppercase u-borderRadius-s u-linkClean u-margin-left-m" href={this.state.serviceUrl} target="_blank">

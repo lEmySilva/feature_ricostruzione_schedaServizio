@@ -1,10 +1,47 @@
 import React, {Component} from 'react';
 
-
+var obj;
 export default class SchedaOrganizzazioni extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            organization:{},
+            startDateTime:" non disponibile ",
+            endDateTime:" non disponibile ",
+        }
 
+    }
+    componentWillReceiveProps(nextProps) {
+        
+       if(nextProps.organization!=null || nextProps.organization!=undefined){
+        obj = JSON.parse(nextProps.organization);
+        this.setOrganization(obj[0]);
+
+        var startDateTime = obj[0].date[0].startDateTime;
+        var endDateTime = obj[0].date[0].endDateTime;
+
+        if(startDateTime !=null && startDateTime !=undefined && startDateTime !=="" ){
+            this.setStartDateTime(obj[0].date[0].startDateTime);
+            }
+
+        if( endDateTime !=null && endDateTime !=undefined && endDateTime !==""){
+            this.setEndDateTime(obj[0].date[0].endDateTime);
+            }    
+        
+       }
+    }
     
+    setOrganization(input){
+        this.setState({organization:input})
+    }
+
+    setStartDateTime(input){
+        this.setState({startDateTime:input});
+    }
+    setEndDateTime(input){
+        this.setState({endDateTime:input});
+    }
 
 
 
@@ -16,31 +53,31 @@ export default class SchedaOrganizzazioni extends Component {
                     <div className="Grid-cell u-md-size5of6 u-lg-size5of6 u-padding-right-xl">
                         <h3 class="u-color-80 u-text-h4">{/*<span class="icon-organization icons u-text-s"></span>*/} Organizzazioni</h3>
                     </div>
-                    <div className="Grid-cell u-md-size1of6 u-lg-size1of6 u-textRight">
-                        {/* <img src="" class="m-r-5" alt="Non prevista autenticazione con PagoPA" title="Non Prevista autenticazione con PagoPA"/>
-                        <img src="" alt="Prevista autenticazione con SPID" title="Prevista autenticazione con SPID"/> */}
-                    </div>
                         </div>
                         <p className="u-lineHeight-l u-text-r-xs u-textSecondary u-padding-r-right  u-padding-r-bottom"></p>
                         <div className="Grid">
-                            <div className="Grid-cell u-md-size1of2 u-lg-size1of2 u-padding-right-xl">
+                            <div className="Grid-cell u-padding-right-xl">
                                 <class is="u-layout-prose u-text-r-x" className="u-layout-prose u-text-r-x">
                                     
                                     {/*Organizzazioni da mettere JSonMap POSSONO ARRIVARE PIù ARRAY*/}
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            Comune di Milano
                                             {/*organizations.name*/}
+                                            {this.state.organization.name}
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Ruolo:</strong> Titolare {/*organizations.role*/}
+                                            <strong>Ruolo: </strong> 
+                                             {/*organizations.role*/}
+                                             {this.state.organization.role}
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            Iniziato il <strong>18/09/2017</strong>{/*organizations.date.startDateTime*/} finito il <strong>18/01/2018</strong>{/*organizations.date.endDateTime*/}
+                                            Iniziato il <strong>{this.state.startDateTime}</strong>finito il <strong>{this.state.endDateTime}</strong> 
+                                            {/*organizations.date.startDateTime*/} 
+                                            {/*organizations.date.endDateTime*/}
                                             {/*<a href="#tooltip0"className="Tooltip-toggle u-textClean u-color-black"data-menu-trigger="tooltip0"></a>*/}
                                         </p>
                                     </li>

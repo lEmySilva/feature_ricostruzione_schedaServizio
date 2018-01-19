@@ -58,7 +58,7 @@ export default class SchedaServizio extends Component {
       serviceType:null,
       keywords:[],
       sector:null,
-      contacts:[],
+      contacts:null,
       temporalCoverage:null,
       inputName:[],
       outputName:[],
@@ -575,15 +575,16 @@ showCubeLoaderSpin()
 
                     <SchedaInformazioni id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} inputName={this.state.inputName} outputName={this.state.outputName} temporalCoverage={this.state.temporalCoverage} spatialCoverage={this.state.spatialCoverage} lifeEvents={this.state.lifeEvents} businessEvents={this.state.businessEvents}/>
                     
-                    <SchedaAccesso id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
+                    {/* scheda fruizione */}
+                    <SchedaAccesso interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription} channelPhone={this.state.channelPhone} channelEmail={this.state.channelEmail} channelOffline={this.state.channelOffline} costs={this.state.costs} processingTimes={this.state.processingTimes}/>
 
-                    <SchedaContatti id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
+                    <SchedaContatti contacts={this.state.contacts}/* email={this.state.contacts.email} office={this.state.contacts.office} tel={this.state.contacts.tel} web={this.state.contacts.web} *//>
 
-                    <SchedaClassificazioni id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
+                    <SchedaClassificazioni themes={this.state.themes} sector={this.state.sector} keywords={this.state.keywords}/>
 
-                    <SchedaOrganizzazioni id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
+                    <SchedaOrganizzazioni organization={this.state.organizations}/>
 
-                    <SchedaFAQ id={this.state.id} serviceOwner={this.state.serviceOwner} realName={this.state.realName} description={this.state.description} serviceUrl={this.state.serviceUrl} status={this.state.status} pagoPA={this.state.pagoPA} spid={this.state.spid} themes={this.state.themes} interactivityLevel={this.state.interactivityLevel} interactivityLevelDescription={this.state.interactivityLevelDescription}/>
+                    <SchedaFAQ />
                   
                   </div>
 

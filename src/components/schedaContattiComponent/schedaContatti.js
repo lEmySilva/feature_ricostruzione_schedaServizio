@@ -1,8 +1,67 @@
 import React, {Component} from 'react';
 
-
+var obj ;
 export default class SchedaContatti extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+            office: "non disponibile",
+            tel: "non disponibile",
+            email : "non disponibile",
+            web : "non disponibile", 
+        };
+      }
+
+      componentDidMount(){
+
+      }
+
+      componentWillReceiveProps(nextprops){
+
+        if(nextprops.contacts != null && nextprops.contacts != undefined){
+
+            this.setContacts(nextprops.contacts);            
+            obj= JSON.parse(nextprops.contacts);
+
+            var email=obj[0].email,
+                office=obj[0].office,
+                phone=obj[0].phone,
+                web=obj[0].web;
+
+            if(email != "" && email!=null && email!=undefined){
+                this.setEmail(email);
+            }
+            if(office != "" && office!=null && office!=undefined){
+                this.setOffice(office);
+            }
+            if(phone != "" && phone!=null && phone!=undefined){
+                this.setTel(phone);
+            }
+            if(web != "" && web!=null && web!=undefined){
+                this.setWeb(web)
+            }
+            
+        }
+      }
+
+        setContacts(input){
+            this.setState({contacts:input});
+        }
+
+        setOffice(input){
+            this.setState({office:input});
+        }
+        setTel(input){
+            this.setState({tel:input});
+        }
+        setEmail(input){
+            this.setState({email:input});
+        }
+        setWeb(input){
+            this.setState({web:input});
+        }
 
     render() {
         return (
@@ -26,26 +85,30 @@ export default class SchedaContatti extends Component {
                                 <class is="u-layout-prose u-text-r-x" className="u-layout-prose u-text-r-x">
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Ufficio:</strong>
+                                            <strong>Ufficio: </strong>
                                             {/*contacts.office*/}
+                                            {this.state.office}
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Telefono:</strong>
+                                            <strong>Telefono: </strong>
                                             {/*contacts.phone*/}
+                                            {this.state.tel}
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Email:</strong>
+                                            <strong>Email: </strong>
                                             {/*contacts.email*/}
+                                            {this.state.email}
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Sito:</strong>
+                                            <strong>Sito: </strong>
                                             {/*contacts.web*/}
+                                            {this.state.web}
                                         </p>
                                     </li>
                                 </class>

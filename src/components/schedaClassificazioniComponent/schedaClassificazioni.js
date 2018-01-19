@@ -1,12 +1,50 @@
 import React, {Component} from 'react';
 
-
+var obj;
 export default class SchedaClassificazioni extends Component {
 
 
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            themes:"non disponibile",
+            sector:{},
+            keywords:"non disponibile",
+        };
+      }
+
+      componentWillReceiveProps(nextProps){
+          /* console.log('Le Props dentro Scheda Classificazioni: ')
+          console.log(nextProps) */
+            var themes = nextProps.themes;
+            //aggiungo gli spazi tra le parole
+            var keywords = nextProps.keywords.join(' ');
+
+          if(themes != "" && themes!=null && themes!=undefined){
+            this.setThemes(themes);
+          }
+          if(keywords != "" && keywords!=null && keywords!=undefined){
+            this.setKeywords(keywords);
+          }
+
+          if(nextProps.sector!=null && nextProps.sector!=undefined){
+            obj = JSON.parse(nextProps.sector);
+            this.setSector(obj)}
+            }
 
 
+
+      setThemes(input){
+          this.setState({themes:input});
+      }
+
+      setSector(input){
+          this.setState({sector:input});
+      }
+
+      setKeywords(input){
+          this.setState({keywords:input})
+      }
 
     render() {
         return (
@@ -30,19 +68,22 @@ export default class SchedaClassificazioni extends Component {
 
                                     {/*Tema*/}
                                     <li className="u-padding-bottom-xs no-ListStyle">
-                                        <strong>Temi di riferimento</strong>
+                                        <strong>Temi di riferimento: </strong>
                                         {/*themes*/}
+                                        {this.state.themes}
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
-                                        <strong>Settore di riferimento</strong>
+                                        <strong>Settore di riferimento: </strong>
                                         {/*sector.Description*/}
+                                        {this.state.sector.description}
+
                                     </li>
                                     {/*Parole chiave*/}
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Parole chiave:</strong> 
-                                            MULTE
+                                            <strong>Parole chiave: </strong> 
                                             {/*keywords*/}
+                                            {this.state.keywords}
                                         </p>
                                     </li>
                                 </class>
