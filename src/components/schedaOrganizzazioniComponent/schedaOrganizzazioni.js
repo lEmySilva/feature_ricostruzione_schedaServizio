@@ -75,7 +75,7 @@ export default class SchedaOrganizzazioni extends Component {
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            Iniziato il <strong>{this.state.startDateTime}</strong>finito il <strong>{this.state.endDateTime}</strong> 
+                                            Iniziato il <strong>{this.state.startDateTime}</strong> finito il <strong>{this.state.endDateTime}</strong> 
                                             {/*organizations.date.startDateTime*/} 
                                             {/*organizations.date.endDateTime*/}
                                             {/*<a href="#tooltip0"className="Tooltip-toggle u-textClean u-color-black"data-menu-trigger="tooltip0"></a>*/}

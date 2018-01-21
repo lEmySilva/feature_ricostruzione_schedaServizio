@@ -177,7 +177,7 @@ export default class SchedaAccesso extends Component {
 
                                     {/* Ufficio: {this.state.channelOffline}<br/> */}
                                     <br/>
-                                    Ufficio: <br/>
+                                    Ufficio: {this.state.channelOffline} <br/>
                                     Indirizzo: <br/>
                                     Città: <br/>
                                     CAP: <br/>

@@ -10,17 +10,17 @@ export default class SchedaInformazioni extends Component {
         super(props);
         this.state = {
             id:props.id,
-            serviceOwner:props.serviceOwner,
-            realName:props.realName,
-            description:props.description,
-            serviceUrl:props.serviceUrl,
+            serviceOwner:"non disponibile",
+            realName: "non disponibile",
+            description:"non disponibile",
+            serviceUrl:"non disponibile",
             status:props.status,
             pagoPA:props.pagoPA,
             spid:props.spid,
-            inputName:props.inputName,
-            outputName:props.outputName,
-            temporalCoverage:props.temporalCoverage,
-            spatialCoverage:props.spatialCoverage,
+            inputName:"non disponibile",
+            outputName:"non disponibile",
+            temporalCoverage: null,
+            spatialCoverage:null,
             lifeEvents:props.lifeEvents,
             businessEvents:props.businessEvents,
             realEvent:null,
@@ -38,7 +38,15 @@ export default class SchedaInformazioni extends Component {
 
     componentWillReceiveProps(nextProps) {
         
+        var serviceOwner = nextProps.serviceOwner;
+        var realName = nextProps.serviceOwner;
+        var description = nextProps.serviceOwner;
+        var serviceOwner = nextProps.serviceOwner;
+        var serviceOwner = nextProps.serviceOwner;
+        var serviceOwner = nextProps.serviceOwner;
+
         this.setId(nextProps.id);
+
         this.setServiceOwner(nextProps.serviceOwner);
         this.setState({realName:nextProps.realName});
         this.setState({description:nextProps.description});
@@ -55,7 +63,6 @@ export default class SchedaInformazioni extends Component {
         if (nextProps.lifeEvents==true && nextProps.businessEvent==false) this.setRealEvent ("Servizio per cittadino")
         else this.setRealEvent ("Servizio per professionista-impresa")
     }
-
 
     setId(input){
         this.setState({id:input});
@@ -171,6 +178,9 @@ export default class SchedaInformazioni extends Component {
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
                                             <strong> Disponibilità del servizio:</strong> 
+                                            Dal <strong></strong> Al <strong></strong>
+                                            <strong>Nella fascia oraria: </strong>
+                                            <strong>Nei giorni: </strong>
                                             {this.state.temporalCoverage}
                                             
                                         </p>
