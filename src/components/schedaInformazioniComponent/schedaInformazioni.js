@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import IconePagoPaSPID from './iconePagoPaSPID';
 
-
+var arrayTemporalCoverage;
 export default class SchedaInformazioni extends Component {
 
 
@@ -19,7 +19,7 @@ export default class SchedaInformazioni extends Component {
             spid:props.spid,
             inputName:"non disponibile",
             outputName:"non disponibile",
-            temporalCoverage: null,
+            temporalCoverage: [],
             spatialCoverage:null,
             lifeEvents:props.lifeEvents,
             businessEvents:props.businessEvents,
@@ -43,6 +43,7 @@ export default class SchedaInformazioni extends Component {
         var description = nextProps.description;
         var inputName = nextProps.inputName;
         var outputName = nextProps.outputName;
+        var temporalCoverage = nextProps.temporalCoverage;
 
         this.setId(nextProps.id);
 
@@ -61,7 +62,18 @@ export default class SchedaInformazioni extends Component {
         if(outputName!=null && outputName!=undefined && outputName!="")
             this.setOutputName(nextProps.outputName);
         
-            this.setTemporalCoverage(nextProps.temporalCoverage);
+
+
+        if(temporalCoverage !=null && temporalCoverage!=undefined){           
+            
+            arrayTemporalCoverage=JSON.parse(nextProps.temporalCoverage);
+            this.setTemporalCoverage(arrayTemporalCoverage);
+        }
+
+
+
+
+
             this.setSpatialCoverage(nextProps.spatialCoverage);
        /*  this.lifeEvents(nextProps.lifeEvents);
         this.businessEvents(nextProps.businessEvents); */
@@ -115,6 +127,42 @@ export default class SchedaInformazioni extends Component {
         this.setState({realEvent:input});
       }
 
+
+    ElementTemporalCoverage(oggetto){
+        var nonDisp= "non disponibile";
+
+        var startInterval= oggetto.startInterval;
+        var endInterval = oggetto.endInterval;
+        var neiGiorni = oggetto.weekDays;
+
+        if(startInterval===null || startInterval===undefined || startInterval===""){
+            startInterval=nonDisp;
+        }
+        if(endInterval===null || endInterval===undefined || endInterval===""){
+            endInterval=nonDisp;
+        }
+        if(neiGiorni===null || neiGiorni===undefined || neiGiorni===""){
+            neiGiorni=nonDisp;
+        }
+
+
+        return <div>
+
+                    <strong> Dal </strong>{startInterval} <strong> Al </strong>{endInterval}
+{/*                     <br/>
+                    <strong>Nella fascia oraria: </strong> */}
+                    <br/>
+                    <strong>Nei giorni: </strong>{neiGiorni}
+                    <br/>
+                </div>
+      }
+
+    createElementsTemporalCoverage(arryDiOggetti){
+
+            return arryDiOggetti.map(this.ElementTemporalCoverage);
+      }
+
+
     render() {
         return (
 
@@ -135,7 +183,7 @@ export default class SchedaInformazioni extends Component {
                                 <class is="u-layout-prose u-text-r-x" className="u-layout-prose u-text-r-x">
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong>Erogatore servizio:</strong>
+                                            <strong>Erogatore servizio: </strong>
                                             {this.state.serviceOwner}
                                         </p>
                                     </li>
@@ -150,7 +198,7 @@ export default class SchedaInformazioni extends Component {
                                     {/*Contanct JsonMap da riempire*/}
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong> Stato:</strong>
+                                            <strong> Stato: </strong>
                                             {this.state.status}
                                             
                                         </p>
@@ -166,14 +214,14 @@ export default class SchedaInformazioni extends Component {
 
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong> Documentazione necessaria:</strong>
+                                            <strong> Documentazione necessaria: </strong>
                                             {this.state.inputName}
                                             
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong> Documentazione rilasciata:</strong>
+                                            <strong> Documentazione rilasciata: </strong>
                                             {this.state.outputName}
                                             
                                         </p>
@@ -182,25 +230,22 @@ export default class SchedaInformazioni extends Component {
 
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
-                                            <strong> Disponibilità del servizio:</strong> 
-                                            <br/>
-                                            Dal <strong></strong> Al <strong></strong><br/>
-                                            <strong>Nella fascia oraria: </strong><br/>
-                                            <strong>Nei giorni: </strong><br/>
-                                            {this.state.temporalCoverage}
+                                            <strong> Disponibilità del servizio: </strong> 
+
+                                            {this.createElementsTemporalCoverage(this.state.temporalCoverage)}
                                             
                                         </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                     <p>
-                                        <strong> Territorio di competenza:</strong>
+                                        <strong> Territorio di competenza: </strong>
                                         {this.state.spatialCoverage}
                                         
                                     </p>
                                     </li>
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                     <p>
-                                        <strong> Tipologia:</strong>
+                                        <strong> Tipologia: </strong>
                                         {this.state.realEvent}
 
                                         
