@@ -13,7 +13,7 @@ export default class SchedaInformazioni extends Component {
             serviceOwner:"non disponibile",
             realName: "non disponibile",
             description:"non disponibile",
-            serviceUrl:"non disponibile",
+            serviceUrl:null,
             status:props.status,
             pagoPA:props.pagoPA,
             spid:props.spid,
@@ -41,8 +41,7 @@ export default class SchedaInformazioni extends Component {
         var serviceOwner = nextProps.serviceOwner;
         var realName = nextProps.serviceOwner;
         var description = nextProps.serviceOwner;
-        var serviceOwner = nextProps.serviceOwner;
-        var serviceOwner = nextProps.serviceOwner;
+        var inputName = nextProps.serviceOwner;
         var serviceOwner = nextProps.serviceOwner;
 
         this.setId(nextProps.id);
