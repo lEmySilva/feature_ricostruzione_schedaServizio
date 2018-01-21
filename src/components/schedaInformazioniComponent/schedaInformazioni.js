@@ -39,24 +39,30 @@ export default class SchedaInformazioni extends Component {
     componentWillReceiveProps(nextProps) {
         
         var serviceOwner = nextProps.serviceOwner;
-        var realName = nextProps.serviceOwner;
-        var description = nextProps.serviceOwner;
-        var inputName = nextProps.serviceOwner;
-        var serviceOwner = nextProps.serviceOwner;
+        var realName = nextProps.realName;
+        var description = nextProps.description;
+        var inputName = nextProps.inputName;
+        var outputName = nextProps.outputName;
 
         this.setId(nextProps.id);
 
-        this.setServiceOwner(nextProps.serviceOwner);
-        this.setState({realName:nextProps.realName});
-        this.setState({description:nextProps.description});
-        this.setServiceUrl(nextProps.serviceUrl);
-        this.setStatus(nextProps.status);
-        this.setPagoPA(nextProps.pagoPA);
-        this.setSpid(nextProps.spid);
-        this.setInputName(nextProps.inputName);
-        this.setOutputName(nextProps.outputName);
-        this.setTemporalCoverage(nextProps.temporalCoverage);
-        this.setSpatialCoverage(nextProps.spatialCoverage);
+        if(serviceOwner!=null && serviceOwner!=undefined && serviceOwner!="")
+            this.setServiceOwner(nextProps.serviceOwner);
+        if(realName!=null && realName!=undefined && realName!="")
+            this.setState({realName:nextProps.realName});
+        if(description!=null && description!=undefined && description!="")
+            this.setState({description:nextProps.description});
+            this.setServiceUrl(nextProps.serviceUrl);
+            this.setStatus(nextProps.status);
+            this.setPagoPA(nextProps.pagoPA);
+            this.setSpid(nextProps.spid);
+        if(inputName!=null && inputName!=undefined && inputName!="")
+            this.setInputName(nextProps.inputName);
+        if(outputName!=null && outputName!=undefined && outputName!="")
+            this.setOutputName(nextProps.outputName);
+        
+            this.setTemporalCoverage(nextProps.temporalCoverage);
+            this.setSpatialCoverage(nextProps.spatialCoverage);
        /*  this.lifeEvents(nextProps.lifeEvents);
         this.businessEvents(nextProps.businessEvents); */
         if (nextProps.lifeEvents==true && nextProps.businessEvent==false) this.setRealEvent ("Servizio per cittadino")
@@ -177,9 +183,10 @@ export default class SchedaInformazioni extends Component {
                                     <li className="u-padding-bottom-xs no-ListStyle">
                                         <p>
                                             <strong> Disponibilità del servizio:</strong> 
-                                            Dal <strong></strong> Al <strong></strong>
-                                            <strong>Nella fascia oraria: </strong>
-                                            <strong>Nei giorni: </strong>
+                                            <br/>
+                                            Dal <strong></strong> Al <strong></strong><br/>
+                                            <strong>Nella fascia oraria: </strong><br/>
+                                            <strong>Nei giorni: </strong><br/>
                                             {this.state.temporalCoverage}
                                             
                                         </p>
