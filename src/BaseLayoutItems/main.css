@@ -84,3 +84,15 @@
 .m-top-broken{
     margin-top: 137px !important;
 }
+
+
+
+
+/* Aggiustamento Dell'interfaccia indexPage */
+
+.AGG-interfaccia{
+    padding-bottom: 40px;
+}
+.newsletter-wrapper .newsletter-background {
+    top: -88px !important;
+}

@@ -102,7 +102,7 @@ export default class IndexPage extends Component {
                     <nav className="Megamenu Megamenu--default js-megamenu u-background-50" data-rel=".Offcanvas .Treeview" />
                   </div>
                 </header>
-                <div className="u-background-50 u-textCenter u-padding-top-l">
+                <div className="AGG-interfaccia u-background-50 u-textCenter u-padding-top-l">
                   <h2 className="u-layoutCenter u-text-r-l u-textWeight-300 u-color-white u-lineHeight-l" style={{maxWidth: '20em'}}>
                     Lorem Ipsum dolor sit amet</h2>
                   <p className="u-text-r-xs  u-color-10 u-layout-prose u-layoutCenter u-padding-r-left u-padding-r-right">
@@ -126,11 +126,11 @@ export default class IndexPage extends Component {
                       {/* <SearchBar/>  */}
                          <div id="SearchBar">
                         
-                            <div class="sk-folding-cube_ContainerCubeSearchBar" id="SpinnerCubeLoaderContainer">
-                              <div class="pieceIndexSearchBar_sk-cube1 sk-cube_IndexSearchBar"></div>
-                              <div class="pieceIndexSearchBar_sk-cube2 sk-cube_IndexSearchBar"></div>
-                              <div class="pieceIndexSearchBar_sk-cube4 sk-cube_IndexSearchBar"></div>
-                              <div class="pieceIndexSearchBar_sk-cube3 sk-cube_IndexSearchBar"></div>
+                            <div className="sk-folding-cube_ContainerCubeSearchBar" id="SpinnerCubeLoaderContainer">
+                              <div className="pieceIndexSearchBar_sk-cube1 sk-cube_IndexSearchBar"></div>
+                              <div className="pieceIndexSearchBar_sk-cube2 sk-cube_IndexSearchBar"></div>
+                              <div className="pieceIndexSearchBar_sk-cube4 sk-cube_IndexSearchBar"></div>
+                              <div className="pieceIndexSearchBar_sk-cube3 sk-cube_IndexSearchBar"></div>
                             </div>
                           
                         </div>
