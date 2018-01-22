@@ -453,27 +453,6 @@ showCubeLoaderSpin()
               <div className="u-padding-top-xxl u-background-50"/>
               <hr className="Separator Separator--up u-background-white"/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               <div className=" u-background-white u-layout-r-withGutter u-posRelative u-zindex-30" id="ContentBody">
                 
                 {/* Cubo di caricamento pagina */}
@@ -484,19 +463,6 @@ showCubeLoaderSpin()
                     <div className="sk-cube3ServicePage  sk-cubeServicePage"></div>
                   </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
               <div className="u-background-white u-layout-r-withGutter u-posRelative u-zindex-30">
                 <div className="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-r-top u-padding-bottom-xxl" id="containerSearchBarAndServizi">
@@ -535,41 +501,6 @@ showCubeLoaderSpin()
                     </nav>
 
                   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                   <div id="ContainerServizi">
 
