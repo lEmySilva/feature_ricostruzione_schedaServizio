@@ -18,7 +18,8 @@ import icoSpid_off from '../../BaseLayoutItems/images/icoSpid_off.png';
 var numberOfToolTipID = 0,
   offsetUrl = 0,
   limitUrl = 10;
-var valueSearch;
+var valueSearch,businessOrLifeEvents;
+var businessEvents,lifeEvents;
 var self;
 var FareLaChiamareAjax = true;
 var clickCaricaAltriRisultati = -1;
@@ -70,7 +71,7 @@ export default class SearchPage extends Component {
       var URL = this.props.url + input; */
     // var URL =
     // 'http://52.174.123.110:8000/services/search/'+input+'*?offset=0&limit=10';
-    var URL = 'http://servicesearchfacade.azurewebsites.net/services/search/' + input + '*?offset=' + offsetUrl + '&limit=' + limitUrl;
+    var URL = 'http://servicesearchfacade.azurewebsites.net/services/search/' + input + '*?offset=' + offsetUrl + '&limit=' + limitUrl + '&businessEvents=' + businessEvents + '&lifeEvents=' + lifeEvents ;
 
     if (FareLaChiamareAjax == true) {
 
@@ -415,6 +416,16 @@ export default class SearchPage extends Component {
       .getItem('searchedValue')
       .trim();
 
+      businessOrLifeEvents= window.sessionStorage.getItem('businessOrLifeEvents').trim();
+
+      if(businessOrLifeEvents==='cittadino'){
+        businessEvents=false;
+        lifeEvents=true;
+      }
+      else{
+        businessEvents=true;
+        lifeEvents=false;
+      }
     //this.setState({valueSearched:valueSearch});
 
     self = this;
